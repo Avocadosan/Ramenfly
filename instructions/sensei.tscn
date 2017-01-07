@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://temple/sensei.gd" type="Script" id=1]
+[ext_resource path="res://temple/assets/sensei.png" type="Texture" id=2]
+[ext_resource path="res://temple/assets/font18.fnt" type="BitmapFont" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 31.4809
+
+[node name="sensei" type="RigidBody2D"]
+
+transform/pos = Vector2( 422, 32 )
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 1.74826, -1.57342 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+mode = 0
+mass = 0.102041
+friction = 0.0
+bounce = 1.0
+gravity_scale = 0.0
+custom_integrator = false
+continuous_cd = 0
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+velocity/linear = Vector2( 0, 0 )
+velocity/angular = 0.0
+damp_override/linear = -1.0
+damp_override/angular = -1.0
+script/script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+transform/scale = Vector2( 2, 2 )
+z/z = 3
+texture = ExtResource( 2 )
+__meta__ = { "_edit_lock_":true }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+transform/pos = Vector2( 1.74826, -1.57342 )
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+__meta__ = { "_edit_lock_":true }
+
+[node name="Label" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 48.0
+margin/top = -12.0
+margin/right = 547.0
+margin/bottom = 23.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 1, 0.859375, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "I cant stand this anymore"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+

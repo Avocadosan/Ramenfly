@@ -1,0 +1,121 @@
+[gd_scene load_steps=8 format=1]
+
+[ext_resource path="res://gameOver/gameOver.gd" type="Script" id=1]
+[ext_resource path="res://gameOver/assets/bg.png" type="Texture" id=2]
+[ext_resource path="res://battle/assets/sprite_6.png" type="Texture" id=3]
+[ext_resource path="res://temple/assets/font32.fnt" type="BitmapFont" id=4]
+[ext_resource path="res://gameOver/assets/button.png" type="Texture" id=5]
+[ext_resource path="res://gameOver/assets/button1.png" type="Texture" id=6]
+[ext_resource path="res://temple/assets/font26.fnt" type="BitmapFont" id=7]
+
+[node name="gameOver" type="Node2D"]
+
+script/script = ExtResource( 1 )
+
+[node name="background" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="background"]
+
+z/z = -3
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Sprite 2" type="Sprite" parent="background"]
+
+transform/pos = Vector2( 338, 303 )
+transform/scale = Vector2( 8.625, 7.6875 )
+texture = ExtResource( 3 )
+
+[node name="text" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="text"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 70.0
+margin/top = 110.0
+margin/right = 585.0
+margin/bottom = 145.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Sensei threw me out again!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="TextureButton" type="TextureButton" parent="text"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 100.0
+margin/top = 350.0
+margin/right = 550.0
+margin/bottom = 442.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 5 )
+textures/hover = ExtResource( 6 )
+
+[node name="Label 2" type="Label" parent="text"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 170.0
+margin/top = 40.0
+margin/right = 481.0
+margin/bottom = 66.0
+custom_fonts/font = ExtResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = " 10 mosquitos to Pay f"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="credits" type="Label" parent="."]
+
+rect/rotation = 35.0
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 90.0
+margin/top = 264.0
+margin/right = 219.0
+margin/bottom = 299.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 1, 0.300781, 0.300781, 1 )
+text = "Credits"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="credits" type="Button" parent="credits"]
+
+visibility/opacity = 0.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 132.0
+margin/bottom = 36.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+flat = false
+
+[connection signal="pressed" from="text/TextureButton" to="." method="_on_TextureButton_pressed"]
+
+[connection signal="pressed" from="credits/credits" to="." method="_on_credits_pressed"]
+
+

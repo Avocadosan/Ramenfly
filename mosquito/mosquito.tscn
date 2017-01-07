@@ -1,0 +1,80 @@
+[gd_scene load_steps=6 format=1]
+
+[ext_resource path="res://mosquito/mosquito.gd" type="Script" id=1]
+[ext_resource path="res://battle/mosquitos/Assets/black.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 6.5732, 5.61442 )
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "Idle"
+length = 0.8
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:offset")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.2, 0.4, 0.6 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ Vector2( 0, 0 ), Vector2( 5, 5 ), Vector2( -1, 0.5 ), Vector2( -8, -4 ) ] }
+tracks/1/type = "value"
+tracks/1/path = NodePath("collision:transform/pos")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = { "times":FloatArray( 0, 0.2, 0.4, 0.6 ), "transitions":FloatArray( 1, 1, 1, 1 ), "update":0, "values":[ Vector2( 0, 0 ), Vector2( 1, 1 ), Vector2( -0.5, 0 ), Vector2( -1.5, -1 ) ] }
+
+[sub_resource type="Animation" id=3]
+
+resource/name = "fadeIn"
+length = 0.8
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visibility/opacity")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = { "times":FloatArray( 0, 0.8 ), "transitions":FloatArray( 1, 1 ), "update":0, "values":[ 0.0, 1.0 ] }
+
+[node name="mosquito" type="KinematicBody2D"]
+
+input/pickable = false
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+collision/margin = 0.08
+script/script = ExtResource( 1 )
+velocity = 100
+
+[node name="sprite" type="Sprite" parent="."]
+
+transform/rot = 90.0
+transform/scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+modulate = Color( 0.613281, 0.0982208, 0.134436, 1 )
+__meta__ = { "_edit_lock_":true }
+
+[node name="collision" type="CollisionShape2D" parent="."]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="animator" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/Idle = SubResource( 2 )
+anims/fadeIn = SubResource( 3 )
+next/Idle = ""
+next/fadeIn = "Idle"
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "Idle"
+
+

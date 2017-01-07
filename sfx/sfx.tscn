@@ -1,0 +1,154 @@
+[gd_scene load_steps=13 format=1]
+
+[ext_resource path="res://sfx/tracks/RamenFlyTheme.ogg" type="AudioStream" id=1]
+[ext_resource path="res://sfx/mosquitoDie.ogg" type="AudioStream" id=2]
+[ext_resource path="res://sfx/tracks/gameOver.ogg" type="AudioStream" id=3]
+[ext_resource path="res://sfx/senseiVoices/grunt1.ogg" type="AudioStream" id=4]
+[ext_resource path="res://sfx/senseiVoices/grunt2.ogg" type="AudioStream" id=5]
+[ext_resource path="res://sfx/senseiVoices/grunt3.ogg" type="AudioStream" id=6]
+[ext_resource path="res://sfx/RamenFly/hit.ogg" type="AudioStream" id=7]
+[ext_resource path="res://sfx/RamenFly/celeb.ogg" type="AudioStream" id=8]
+[ext_resource path="res://sfx/RamenFly/ahh.ogg" type="AudioStream" id=9]
+[ext_resource path="res://sfx/RamenFly/letsJam.ogg" type="AudioStream" id=10]
+[ext_resource path="res://sfx/RamenFly/sensei.ogg" type="AudioStream" id=11]
+[ext_resource path="res://sfx/RamenFly/ramenFly.ogg" type="AudioStream" id=12]
+
+[node name="sfx" type="Node2D"]
+
+[node name="ramenFlyIntro" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 1 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 3.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 6.857
+stream/buffering_ms = 500
+
+[node name="mosquitoDie" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 2 )
+stream/play = true
+stream/loop = false
+stream/volume_db = 5.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="gameOver" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 3 )
+stream/play = true
+stream/loop = false
+stream/volume_db = 3.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="sensei" type="Node2D" parent="."]
+
+[node name="gruntOne" type="StreamPlayer" parent="sensei"]
+
+stream/stream = ExtResource( 4 )
+stream/play = true
+stream/loop = false
+stream/volume_db = 12.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="gruntTwo" type="StreamPlayer" parent="sensei"]
+
+stream/stream = ExtResource( 5 )
+stream/play = true
+stream/loop = false
+stream/volume_db = 14.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="GruntThree" type="StreamPlayer" parent="sensei"]
+
+stream/stream = ExtResource( 6 )
+stream/play = true
+stream/loop = false
+stream/volume_db = 10.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="ramenFly" type="Node2D" parent="."]
+
+[node name="hit" type="StreamPlayer" parent="ramenFly"]
+
+stream/stream = ExtResource( 7 )
+stream/play = true
+stream/loop = false
+stream/volume_db = 7.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="celeb" type="StreamPlayer" parent="ramenFly"]
+
+stream/stream = ExtResource( 8 )
+stream/play = true
+stream/loop = false
+stream/volume_db = 12.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="ahh" type="StreamPlayer" parent="ramenFly"]
+
+stream/stream = ExtResource( 9 )
+stream/play = true
+stream/loop = false
+stream/volume_db = 10.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="letsJam" type="StreamPlayer" parent="ramenFly"]
+
+stream/stream = ExtResource( 10 )
+stream/play = true
+stream/loop = false
+stream/volume_db = 8.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="sensei" type="StreamPlayer" parent="ramenFly"]
+
+stream/stream = ExtResource( 11 )
+stream/play = true
+stream/loop = false
+stream/volume_db = 12.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="ramenFly" type="StreamPlayer" parent="ramenFly"]
+
+stream/stream = ExtResource( 12 )
+stream/play = true
+stream/loop = false
+stream/volume_db = 6.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+
