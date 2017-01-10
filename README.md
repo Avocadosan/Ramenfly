@@ -16,8 +16,11 @@ You live with your Sensei in his sanctuary. Your job is to kill all the mosquito
 With WASD you move your character and with WASD+Left Click you kill the mosquitos! 
 
 ###Tools: 
-Godot Game Engine 
-Gimp 
-Piskel 
-Audacity 
-Reason 
+Godot Game Engine, 
+Gimp, 
+Piskel, 
+Audacity, 
+Reason
+
+:eggplant:
+
