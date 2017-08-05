@@ -77,12 +77,12 @@ func _fly_away_bar():
 			failedAnimation.play("failed")
 			sfx._play_ahh()
 
-#i clear al the mosquitos for the last scene
+#I clear al the mosquitos for the last scene
 func _clear_mosquitos():
 	for i in get_tree().get_nodes_in_group("mosquitos"):
 		i.queue_free()
 
-#here i move the hand
+#here I move the hand
 func _move_hand():
 	if handIsActive:
 		Input.set_mouse_mode(1)
